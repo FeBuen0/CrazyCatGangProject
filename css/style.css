@@ -5,15 +5,102 @@ body {
     align-items: center;
     flex-direction: column;
     background-color: rgb(243, 236, 199);
-    margin: 0px;
+    margin: 0;
+    width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+/* POP UP */
+
+.abrir-popup-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #000000;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.25s;
+}
+
+.abrir-popup-button:hover {
+    text-decoration: underline;
+    background-color: #FAC605;
+    color: #000000;
+    border-radius: 15px;
+}
+
+
+
+.popup {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+    justify-content: center;
+    align-items: center;
+}
+
+
+.conteudo-popup {
+    border: 2px solid black;
+    background-color: rgb(243, 236, 199);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+
+.fechar-popup-button {
+    margin-top: 10px;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    background-color: #FAC605;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: 0.25s;
+    
+}
+
+.fechar-popup-button:hover {
+    background-color: #000000;
+    color: #FAC605;
+    text-decoration: underline;
+}
+
+.popup.mostrar {
+    display: flex; 
+}
+
+
+.login-usuario {
+    color: #000000;
+    transition: 0.25s;
+}
+
+.login-usuario:hover {
+    color: #FAC605;
+}
+
+.cadastro-usuario {
+    color: #000000;
+    transition: 0.25s;
+}
+
+.cadastro-usuario:hover {
+    color: #FAC605;
 }
 
 /* INDEX */
-
 .title-index {
     font-size: 20px;
-    margin-left: 0%;
-    top: 0%;
+    top: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,20 +123,20 @@ header {
     width: 100%;
 }
 
-header .header-index{
+.header-index {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    height: 10px;
+    padding: 20px;
     width: 100%;
-    margin: 20px;
+    box-sizing: border-box;
 }
 
 .header-button {
     font-size: 15px;
     text-decoration: none;
     background-color: rgb(0, 0, 0);
-    border: 0px;
+    border: none;
     border-radius: 5px;
     color: rgb(255, 255, 255);
     transition: 0.25s;
@@ -60,20 +147,13 @@ header .header-index{
     text-decoration: underline;
     background-color: #FAC605;
     border-radius: 15px;
-    padding: 10px;
-    color: black;
-}
-
-
-link {
     color: black;
 }
 
 .button {
     background-color: rgb(0, 0, 0);
-    border: 0px;
+    border: none;
 }
-
 
 .imagem-CCG {
     margin-top: 20px;
@@ -81,24 +161,25 @@ link {
     justify-content: center;
     align-items: center;
     background-color: #FAC605;
-    width: 1300px;
+    width: 100%;
+    max-width: 1000px;
     border-radius: 5px;
 }
 
-.text-index{
-    width: 900px;
-    height: 700px;
+.text-index {
+    width: 100%;
+    max-width: 900px;
     font-size: 18px;
     margin: 20px;
+    box-sizing: border-box;
 }
-
 
 .footer {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 360px;
+    height: 220px;
     background-color: rgb(24, 23, 23);
     color: rgb(146, 142, 142);
 }
@@ -112,6 +193,9 @@ link {
     height: 100px;
     color: rgb(90, 88, 88);
 }
+
+
+
 
 /* CLINICAS */
 
@@ -162,7 +246,7 @@ link {
     width: 300px;
     height: 60px;
     transition: 0.25s;
-
+    cursor: pointer;
 }
 
 .button-entrar-clinica:hover {
@@ -195,12 +279,24 @@ select {
     cursor: pointer;
 }
 
-.txtbox, select {
+.txtbox {
     width: 100%; 
     padding: 8px; 
     border: 1px solid #ccc; 
     border-radius: 4px;
+    box-sizing: border-box; 
 }
+
+
+select {
+    margin-left: 15px;
+    width: 90%; 
+    padding: 8px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
 
 .txtLabell {
     color: white;
@@ -220,6 +316,7 @@ select {
     left: 17.5%;
     transition: 0.25s;
     border: 1px solid #000000;
+    cursor: pointer;
 }
 
 .button-cadastrar-clinica:hover {
