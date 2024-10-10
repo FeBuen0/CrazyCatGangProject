@@ -11,7 +11,7 @@ body {
     box-sizing: border-box;
 }
 
-/* POP UP */
+/*-------------------------- POP UP --------------------------*/
 
 .abrir-popup-button {
     padding: 10px 20px;
@@ -97,7 +97,7 @@ body {
     color: #FAC605;
 }
 
-/* INDEX */
+/*-------------------------- INDEX -------------------------- */
 .title-index {
     font-size: 20px;
     top: 0;
@@ -172,8 +172,8 @@ header {
     font-size: 18px;
     margin: 20px;
     box-sizing: border-box;
+    margin-bottom: 110px;
 }
-
 .footer {
     display: flex;
     justify-content: center;
@@ -197,7 +197,7 @@ header {
 
 
 
-/* CLINICAS */
+/*-------------------------- CLINICAS -------------------------- */
 
 .container-clinica {
     margin: 20px;
@@ -324,4 +324,139 @@ select {
     border: 1px solid #ccc;
 }
 
-/* LOGIN CADASTRO */
+    /*-------------------------- LOGIN -------------------------- */
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: rgb(205, 199, 168);
+    margin: 60px;
+    width: 550px;
+    flex-direction: column;
+}
+
+
+.login-box {
+    margin: 20px;
+}
+
+.login-txtbox {
+    border-radius: 15px;
+    border: 1px solid black;
+    padding: 8px;
+    padding-top: 15px;
+    width: 359px;
+}
+
+.entrar-login-button {
+    border-radius: 10px;
+    background-color: #000000;
+    padding: 10px;
+    border: 0px;
+    color: white;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.entrar-login-button:hover {
+    background-color: #FFCB04;
+    color: #000000;
+
+}
+
+.footer-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 220px;
+    background-color: rgb(24, 23, 23);
+    color: rgb(146, 142, 142);
+    margin-top: 126px;
+}
+
+.footer-footer-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    width: 100%;
+    height: 100px;
+    color: rgb(90, 88, 88);
+}
+
+/*-------------------------- CADASTRO --------------------------*/
+
+.cadastro-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: rgb(205, 199, 168);
+    margin: 60px;
+    width: 1000px;
+    flex-direction: column;
+}
+
+
+.cadastro-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.cadastro-txtbox {
+    margin: 10px;
+    border-radius: 15px;
+    border: 1px solid black;
+    padding: 8px;
+    padding-top: 15px;
+    width: 359px;
+}
+
+.entrar-cadastro-button {
+    border-radius: 10px;
+    background-color: #000000;
+    padding: 10px;
+    border: 0px;
+    color: white;
+    transition: 0.25s;
+    width: 80px;
+    cursor: pointer;
+}
+
+.entrar-cadastro-button:hover {
+    background-color: #FFCB04;
+    color: #000000;
+
+}
+
+.cadastro-box-esquerda {
+    margin-right: 160px;
+}
+
+.footer-cadastro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 220px;
+    background-color: rgb(24, 23, 23);
+    color: rgb(146, 142, 142);
+    margin-top: 90px;
+}
+
+.footer-footer-cadastro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    width: 100%;
+    height: 100px;
+    color: rgb(90, 88, 88);
+}
