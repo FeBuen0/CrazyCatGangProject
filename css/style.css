@@ -460,3 +460,39 @@ select {
     height: 100px;
     color: rgb(90, 88, 88);
 }
+
+
+
+
+
+/*-------------------------- ADD CLINICA --------------------------*/
+
+
+
+.title-index-add-clinica {
+    
+    font-size: 10px;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #FFCB04;
+}
+
+
+.logo-CCG {
+    width: 100px;
+    height: 100px;
+}
+
+
+.title-add-clinica {
+    color: black;
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+.title-add-clinica:hover {
+    color: white;
+}
