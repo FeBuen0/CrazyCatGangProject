@@ -13,41 +13,43 @@
             <h1><a href="index.html" class="title">Crazy Cat Gang</a></h1>
         </div>
         
-        <div class="cadastro-container">
-            <h1>Cadastro</h1>
-            <div class="cadastro-box">
-                <div class="cadastro-box-esquerda">
-                    <div>
-                        <label for=""><strong>Email:</strong></label><br>
-                        <input type="email" class="cadastro-txtbox">
+        <form method="post" onsubmit="return validarFormulario();">
+            <div class="cadastro-container">
+                <h1>Cadastro</h1>
+                <div class="cadastro-box">
+                    <div class="cadastro-box-esquerda">
+                        <div>
+                            <label for=""><strong>Email:</strong></label><br>
+                            <input type="email" class="cadastro-txtbox" name="email">
+                        </div>
+                        <div>
+                            <label for=""><strong>Senha:</strong></label><br>
+                            <input type="password" class="cadastro-txtbox" name="senha">
+                        </div>
+                        <div>
+                            <label for=""><strong>Nome:</strong></label><br>
+                            <input type="text" class="cadastro-txtbox" name="nome">
+                        </div>
                     </div>
-                    <div>
-                        <label for=""><strong>Senha:</strong></label><br>
-                        <input type="password" class="cadastro-txtbox">
-                    </div>
-                    <div>
-                        <label for=""><strong>Nome:</strong></label><br>
-                        <input type="text" class="cadastro-txtbox">
+                    <div class="cadastro-box-direita">
+                        <div>
+                            <label for=""><strong>CPF:</strong></label><br>
+                            <input type="number" class="cadastro-txtbox" name="cpf">
+                        </div>
+                        <div>
+                            <label for=""><strong>Telefone:</strong></label><br>
+                            <input type="number" class="cadastro-txtbox" name="telefone">
+                        </div>
+                        <div>
+                            <label for=""><strong>Endereço</strong>:</label><br>
+                            <input type="text" class="cadastro-txtbox" name="endereco">
+                        </div>
                     </div>
                 </div>
-                <div class="cadastro-box-direita">
-                    <div>
-                        <label for=""><strong>CPF:</strong></label><br>
-                        <input type="number" class="cadastro-txtbox">
-                    </div>
-                    <div>
-                        <label for=""><strong>Telefone:</strong></label><br>
-                        <input type="number" class="cadastro-txtbox">
-                    </div>
-                    <div>
-                        <label for=""><strong>Endereço</strong>:</label><br>
-                        <input type="text" class="cadastro-txtbox">
-                    </div>
+                <div>
+                    <button type="button" class="entrar-cadastro-button" >Entrar</button>
                 </div>
-            </div>
-            <div>
-                <button type="button" class="entrar-cadastro-button">Entrar</button>
-            </div>
+        </form>
         </div>
         
         <div class="footer-cadastro"></div>
