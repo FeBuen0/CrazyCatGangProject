@@ -345,7 +345,7 @@ select {
 
 .login-txtbox {
     border-radius: 15px;
-    border: 1px solid black;
+    border: 2px solid black;
     padding: 8px;
     padding-top: 15px;
     width: 359px;
@@ -375,7 +375,7 @@ select {
     height: 220px;
     background-color: rgb(24, 23, 23);
     color: rgb(146, 142, 142);
-    margin-top: 126px;
+    margin-top: 290px;
 }
 
 .footer-footer-login {
@@ -413,7 +413,7 @@ select {
 .cadastro-txtbox {
     margin: 10px;
     border-radius: 15px;
-    border: 1px solid black;
+    border: 2px solid black;
     padding: 8px;
     padding-top: 15px;
     width: 359px;
@@ -448,7 +448,8 @@ select {
     height: 220px;
     background-color: rgb(24, 23, 23);
     color: rgb(146, 142, 142);
-    margin-top: 90px;
+    margin-top: 160px;
+
 }
 
 .footer-footer-cadastro {
