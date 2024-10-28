@@ -511,7 +511,14 @@ select {
     height: 500px;
     border-radius: 15px;
     margin: 20px;
+    transition: 0.25s;
 }
+
+.card-clinicas:hover{
+    background-color: rgb(187, 180, 151);
+
+}
+
 
 .parte-imagem-card {
     display: flex;
@@ -537,3 +544,8 @@ select {
     margin: 10px;
     text-decoration: underline;
 }
+
+a {
+    color: inherit;
+}
+
