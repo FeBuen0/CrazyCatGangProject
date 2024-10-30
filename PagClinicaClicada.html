@@ -1,30 +1,59 @@
 <html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="favcon_io/favicon.ico" type="Logo-CCG">
+    <title>Clinica</title>
+</head>
+<body>
+    <div class="title-index-add-clinica">
+        <img src="imagens/images.png" alt="logo" class="logo-CCG">
+        <h1><a href="index.html" class="title-add-clinica">Crazy Cat Gang</a></h1>
+    </div>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="shortcut icon" href="favcon_io/favicon.ico" type="Logo-CCG">
-        <title>Possuo uma clínica</title>
-    </head>
-
-    <body>
-        <div class="title-index-add-clinica">
-            <img src="imagens/images.png" alt="logo" class="logo-CCG">
-            <h1><a href="index.html" class="title-add-clinica">Crazy Cat Gang</a></h1>
+    <div class="clinica-usuario">
+        <div class="nome-clinica-usuario">
+            <h1>NOME CLINICA</h1>
         </div>
-
-        <div class="clinica-usuario">
-            <div class="nome-clinica-usuario">
-                <h1>NOME CLINICA</h1>
-            </div>
+        <div class="info-img-clinica-usuario">
             <div class="img-clinica-usuario">
-                <img src="imagens/sispet-dicas-clinica-veterinaria-sustentavel-768x512.webp" alt="imagem-clinica">
+                <img src="imagens/sispet-dicas-clinica-veterinaria-sustentavel-768x512.webp" alt="imagem-clinica" style="height: 400px; width: 700px; border-radius: 15px; border: 2px solid #FFCB04;">
             </div>
-            <div class="informacoes-clinica-usuarioz">
-
+            <div class="informacoes-clinica-usuarios">
+                <div class="informacoes-clinica-usuario-esquerda">
+                    <div><b><p>Endereço:</p></b></div>
+                    <div><b><p>Horarios:</p></b></div>
+                    <div><b><p>Gatos disponíveis:</p></b></div>
+                </div>
+                <div class="informacoes-clinica-usuario-direita">
+                    <div><b><p>Ração disponível:</p></b></div>
+                    <div><b><p>Gatos adotados:</p></b></div>
+                    <div><b><p>Status de doações:</p></b></div>
+                </div>
             </div>
-
+            <div class="doaradotar">
+                <div>
+                    <a href="pagAdotar.html"><button class="but-adotar-pagclinica">Adotar</button></a>
+                </div>
+                <div>
+                    <button class="mostrar-popup-botao">Doar</button>
+                </div>
+            </div>
         </div>
-    </body>
+    </div>
+    <div class="popup" id="modal">
+        <div class="conteudo-popup">
+            <h2>Doe Agora!!</h2>
+            <div class="inside-popup">
+                <div><a href=""><button class="btn-doar">Dinheiro</button></a></div>
+                <div><a href=""><button class="btn-doar">Ração</button></a></div>
+                <div><a href=""><button class="btn-doar">Outro</button></a></div>
+            </div>
+            
+            <button class="esconder-popup-botao">Fechar</button>
+        </div>
+    </div>
+    <script defer src="js/pagclinicausuario.js"></script>
+</body>
 </html>
