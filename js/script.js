@@ -19,3 +19,6 @@ popup.addEventListener('click', (e) => {
         popup.classList.remove('mostrar');
     }
 });
+
+
+

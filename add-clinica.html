@@ -13,5 +13,45 @@
             <img src="imagens/images.png" alt="logo" class="logo-CCG">
             <h1><a href="index.html" class="title-add-clinica">Crazy Cat Gang</a></h1>
         </div>
+
+        <div class="container2">
+            <h1 class="titulo2">Painel de Administração da Clínica de Gatos</h1>
+        
+            <!-- Seção para ver doações recebidas -->
+            <div class="secao2" id="secaoDoacoes">
+                <h2 class="tituloSecao2">Doações Recebidas</h2>
+                <div class="doacoes-recebidas2" id="listaDoacoes">
+                    <!-- As doações serão listadas aqui -->
+                </div>
+            </div>
+        
+            <!-- Seção para adicionar um novo gato -->
+            <div class="secao2" id="secaoAdicionarGato">
+                <h2 class="tituloSecao2">Adicionar Novo Gato</h2>
+                <div class="input-group2">
+                    <label class="label2" for="nomeGato">Nome do Gato:</label>
+                    <input class="input2" type="text" id="nomeGato">
+                </div>
+                <div class="input-group2">
+                    <label class="label2" for="idadeGato">Idade (anos):</label>
+                    <input class="input2" type="number" id="idadeGato" min="0">
+                </div>
+                <div class="input-group2">
+                    <label class="label2" for="descricaoGato">Descrição:</label>
+                    <textarea class="input2" id="descricaoGato" rows="3"></textarea>
+                </div>
+                <button class="botao2" id="botaoAdicionarGato">Adicionar Gato</button>
+            </div>
+        
+            <!-- Seção para listar gatos -->
+            <div class="secao2" id="secaoListaGatos">
+                <h2 class="tituloSecao2">Gatos na Clínica</h2>
+                <div class="lista-gatos2" id="listaGatos">
+                    <!-- A lista de gatos será exibida aqui -->
+                </div>
+            </div>
+        </div>
+        
+        <script defer src="js/adm-clinica.js"></script>
     </body>
 </html>

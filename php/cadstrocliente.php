@@ -1,11 +1,8 @@
 <?php
 $servername = "localhost"; // ou o endereço do seu servidor
 $username = "root";
-<<<<<<< HEAD
 $password = "PUC@1234";
-=======
 $password = "PUC@1234";
->>>>>>> main
 $dbname = "db_ong";
 
 // Criar conexão
