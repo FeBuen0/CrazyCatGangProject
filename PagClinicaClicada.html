@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,6 +7,7 @@
     <link rel="shortcut icon" href="favcon_io/favicon.ico" type="Logo-CCG">
     <title>Clinica</title>
 </head>
+
 <body>
     <div class="title-index-add-clinica">
         <img src="imagens/images.png" alt="logo" class="logo-CCG">
@@ -14,26 +16,40 @@
 
     <div class="clinica-usuario">
         <div class="nome-clinica-usuario">
-            <h1>NOME CLINICA</h1>
+            <h1 id="nome-clinica">NOME CLINICA</h1>
         </div>
         <div class="info-img-clinica-usuario">
             <div class="img-clinica-usuario">
-                <img src="imagens/sispet-dicas-clinica-veterinaria-sustentavel-768x512.webp" alt="imagem-clinica" style="height: 400px; width: 700px; border-radius: 15px; border: 2px solid #FFCB04;">
+                <img src="imagens/sispet-dicas-clinica-veterinaria-sustentavel-768x512.webp" alt="imagem-clinica"
+                    style="height: 400px; width: 700px; border-radius: 15px; border: 2px solid #FFCB04;">
             </div>
-            
-            <div class="informacoes-clinica-usuarios">
 
+            <div class="informacoes-clinica-usuarios">
                 <div class="informacoes-clinica-usuario-esquerda">
-                    <div><p><b>Endereço:</b> endereço</p></div>
-                    <div><p><b>Horarios:</b> seg - sex: 8:00 - 18:00</p></div>
-                    <div><p><b>Gatos disponíveis:</b> 2</p></div>
+                    <div>
+                        <p><b>Endereço:</b> <span id="endereco">endereço</span></p>
+                    </div>
+                    <div>
+                        <p><b>Horários:</b> seg - sex: 8:00 - 18:00</p>
+                    </div>
+                    <div>
+                        <p><b>Gatos disponíveis:</b> <span id="gatos-disponiveis">2</span></p>
+                    </div>
+                    <div>
+                        <p><b>Telefone:</b> <span id="telefone">2</span></p>
+                    </div>
                 </div>
                 <div class="informacoes-clinica-usuario-direita">
-                    <div><p><b>Ração:</b> não precisa</p></div>
-                    <div><p><b>Gatos adotados:</b> 4</p></div>
-                    <div><p><b>Status de doações:</b> estável</p></div>
+                    <div>
+                        <p><b>Ração:</b> não precisa</p>
+                    </div>
+                    <div>
+                        <p><b>Gatos adotados:</b> 4</p>
+                    </div>
+                    <div>
+                        <p><b>Status de doações:</b> estável</p>
+                    </div>
                 </div>
-
             </div>
 
             <div class="doaradotar">
@@ -46,6 +62,7 @@
             </div>
         </div>
     </div>
+
     <div class="popup" id="modal">
         <div class="conteudo-popup">
             <h2>Doe Agora!!</h2>
@@ -54,10 +71,41 @@
                 <div><a href=""><button class="btn-doar">Ração</button></a></div>
                 <div><a href=""><button class="btn-doar">Outro</button></a></div>
             </div>
-            
             <button class="esconder-popup-botao">Fechar</button>
         </div>
     </div>
+
     <script defer src="js/pagclinicausuario.js"></script>
+    <script>
+        // Função para pegar os parâmetros da URL
+        function getQueryParams() {
+            console.log("URL completa:", window.location.href);
+            const params = new URLSearchParams(window.location.search);
+            const clinica = {
+                nome: params.get('nome'),
+                rua: params.get('rua'),
+                bairro: params.get('bairro'),
+                telefone: params.get('telefone'),
+                gatosDisponiveis: params.get('gatosDisponiveis') || 10 // Valor padrão
+            };
+
+            // Adicione log para verificar os parâmetros
+            console.log("Parâmetros da URL:", clinica);
+
+            return clinica;
+        }
+
+        window.onload = function () {
+            const clinica = getQueryParams();
+
+            // Preencher os elementos HTML com os dados da clínica
+            document.getElementById("nome-clinica").innerText = clinica.nome || "Nome não disponível";
+            document.getElementById("endereco").innerText = `${clinica.rua || "Rua não disponível"}, ${clinica.bairro || "Bairro não disponível"}`;
+            document.getElementById("telefone").innerText = clinica.telefone || "Telefone não disponível";
+        };
+
+
+    </script>
 </body>
+
 </html>
