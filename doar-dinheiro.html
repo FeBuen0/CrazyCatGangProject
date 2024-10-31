@@ -1,0 +1,33 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="favcon_io/favicon.ico" type="Logo-CCG">
+    <title>Doe Dinheiro</title>
+</head>
+<body>
+    <div class="title-index-add-clinica">
+        <img src="imagens/images.png" alt="logo" class="logo-CCG">
+        <h1><a href="index.html" class="title-add-clinica">Crazy Cat Gang</a></h1>
+    </div>
+
+     <div class="divdocontainer">
+         <div class="caixa" id="caixa">
+            <h1>Faça uma Doação</h1>
+            <p>Escolha o valor da sua doação:</p>
+            <input type="range" class="barra" id="doacao" min="10" max="500" step="10" value="100">
+            <div class="valor">R$ <span id="valor">100</span>,00</div>
+            <button class="botao" id="botaoDoar">Doar</button>
+            <div class="pix-container" id="pix">
+                <p>Use o PIX para doar:</p>
+                <p>Chave PIX: br <strong>1234 5678 9101 1121</strong></p>
+                <button class="botao" id="botaoConcluido">Concluído</button>
+            </div>
+             </div>
+     </div>
+
+
+    <script defer src="js/pix.js"></script>
+</body>
+</html>

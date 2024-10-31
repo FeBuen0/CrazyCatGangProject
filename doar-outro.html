@@ -1,0 +1,35 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="favcon_io/favicon.ico" type="Logo-CCG">
+    <title>Doe Dinheiro</title>
+</head>
+<body>
+    <div class="title-index-add-clinica">
+        <img src="imagens/images.png" alt="logo" class="logo-CCG">
+        <h1><a href="index.html" class="title-add-clinica">Crazy Cat Gang</a></h1>
+    </div>
+
+    <div class="divdacaixa-doacao">
+        <div class="caixa-doacao">
+            <h1 class="titulo">Doe para a Clínica de Gatos</h1>
+            <p>Escolha o produto que você gostaria de doar:</p>
+        
+            <select class="seletor" id="produto">
+                <option value="alimento">Alimento</option>
+                <option value="brinquedo">Brinquedo</option>
+                <option value="cobertor">Cobertor</option>
+                <option value="areia">Areia Higiênica</option>
+                <option value="remédio">Remédio</option>
+            </select>
+            <input type="number" class="quantidade" id="quantidade" placeholder="Quantidade (unidades)" min="1">
+        
+            <button class="botao-confirmar" id="botaoConfirmar">Confirmar Doação</button>
+        </div>
+    </div>
+
+    <script defer src="js/doaroutro.js"></script>
+</body>
+</html>
