@@ -1,55 +1,37 @@
 <?php
-session_start();
+header('Content-Type: application/json');
 
-// Habilitar exibição de erros
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-$servername = "127.0.0.1";
+// Conexão com o banco de dados
+$servername = "localhost";
 $username = "root";
-$password = "123456";
+$password = "PUC@1234";
 $dbname = "db_ong";
 
-// Criar conexão
 $conn = new mysqli($servername, $username, $password, $dbname);
 
+// Verifique a conexão
 if ($conn->connect_error) {
-    die("Conexão falhou: " . $conn->connect_error);
+    die(json_encode(['error' => 'Erro na conexão com o banco de dados']));
 }
 
-// Inicializa a variável de resposta
-$resposta = null;
+// Receber dados do POST
+$data = json_decode(file_get_contents("php://input"));
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = trim($_POST['email']);
-    $senha = trim($_POST['senha']);
+$email = $data->email;
+$senha = $data->senha;
 
-    $stmt = $conn->prepare("SELECT idcliente, senha FROM cliente WHERE email = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $stmt->store_result();
+// Prepara e executa a consulta
+$stmt = $conn->prepare("SELECT * FROM cliente WHERE email = ? AND senha = ?");
+$stmt->bind_param("ss", $email, $senha);
+$stmt->execute();
+$result = $stmt->get_result();
 
-    if ($stmt->num_rows > 0) {
-        $stmt->bind_result($id, $senhaArmazenada);
-        $stmt->fetch();
-
-        if ($senha === $senhaArmazenada) {
-            $_SESSION['usuario_id'] = $id;
-            header("Location: ../GridClin.html");
-            exit();
-        } else {
-            $resposta = "Senha incorreta.";
-        }
-    } else {
-        $resposta = "Email não encontrado.";
-    }
-
-    $stmt->close();
+if ($result->num_rows > 0) {
+    echo json_encode(['message' => 'Login bem-sucedido']);
+} else {
+    echo json_encode(['error' => 'Email ou senha inválidos']);
 }
+
+$stmt->close();
 $conn->close();
-
-if ($resposta) {
-    echo json_encode($resposta);
-}
 ?>
