@@ -3,8 +3,8 @@ header('Content-Type: application/json');
 
 $servername = "localhost";
 $username = "root";
-$password = "PUC@1234";
-$dbname = "db_ong"; // Substitua pelo nome do seu banco de dados
+$password = "felipe060906";
+$dbname = "db_ong2"; // Substitua pelo nome do seu banco de dados
 
 // Criação da conexão com o banco de dados
 $conn = new mysqli($servername, $username, $password, $dbname);
