@@ -4,7 +4,11 @@ header('Content-Type: application/json');
 // Conexão com o banco de dados
 $servername = "localhost";
 $username = "root";
+<<<<<<< HEAD
 $password = "PUC@1234";
+=======
+$password = "PUC@1234";
+>>>>>>> main
 $dbname = "db_ong";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
