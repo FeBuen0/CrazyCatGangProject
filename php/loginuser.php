@@ -8,7 +8,7 @@ error_reporting(E_ALL);
 
 $servername = "127.0.0.1";
 $username = "root";
-$password = "123456";
+$password = "felipe060006";
 $dbname = "db_ong";
 
 // Criar conexão
