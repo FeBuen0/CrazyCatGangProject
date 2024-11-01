@@ -1,19 +1,18 @@
 <?php
-$servername = "localhost"; // ou o endereço do seu servidor
+$servername = "localhost";
 $username = "root";
-$password = "PUC@1234";
-$password = "PUC@1234";
-$dbname = "db_ong";
+$password = "puc";
+$dbname = "db_ong2";
 
-// Criar conexão
+
 $connexao = new mysqli($servername, $username, $password, $dbname);
 
-// Verificar conexão
+
 if ($connexao->connect_error) {
     die("Conexão falhou: " . $conexao->connect_error);
 }
 
-// Receber dados do formulário
+
 $nome = $_POST['nome'];
 $email = $_POST['email'];
 $cpf = $_POST['cpf'];
@@ -25,7 +24,7 @@ if(empty($nome) || empty($email) || empty($email) || empty($email) || empty($ema
     $resposta = "Preencha todos os dados";
 } 
 else {
-    // Preparar e executar a query
+   
     $stmt = $connexao->prepare("INSERT INTO cliente (email,senha,nome,cpf,telefone,endereco) VALUES (?, ?, ?,?,?,?)");
     $stmt->bind_param("ssssss", $email,$senha,$nome,$cpf,$telefone,$endereco);
 
@@ -34,7 +33,7 @@ else {
     } else {
         $resposta = "Erro: " . $stmt->error;
     }
-    // Fechar conexão
+   
     $stmt->close();
     $connexao->close();
 }

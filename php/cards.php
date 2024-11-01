@@ -1,6 +1,6 @@
 <?php
 
-    $db = mysqli_connect("localhost:3306","root","felipe060906",'db_ong2');
+    $db = mysqli_connect("localhost:3306","root","puc",'db_ong2');
     $query = "SELECT * FROM clinica";
 
     $dados = mysqli_query($db,$query);

@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="shortcut icon" href="favcon_io/favicon.ico" type="Logo-CCG">
         <title>Possuo uma clínica</title>
+        <script src="js/cadastro_gato.js"></script>
     </head>
 
     <body>
@@ -17,15 +18,15 @@
         <div class="container2">
             <h1 class="titulo2">Painel de Administração da Clínica de Gatos</h1>
         
-            <!-- Seção para ver doações recebidas -->
+           
             <div class="secao2" id="secaoDoacoes">
                 <h2 class="tituloSecao2">Doações Recebidas</h2>
                 <div class="doacoes-recebidas2" id="listaDoacoes">
-                    <!-- As doações serão listadas aqui -->
+                   
                 </div>
             </div>
         
-            <!-- Seção para adicionar um novo gato -->
+
             <div class="secao2" id="secaoAdicionarGato">
                 <h2 class="tituloSecao2">Adicionar Novo Gato</h2>
                 <div class="input-group2">
@@ -37,10 +38,14 @@
                     <input class="input2" type="number" id="idadeGato" min="0">
                 </div>
                 <div class="input-group2">
-                    <label class="label2" for="descricaoGato">Descrição:</label>
-                    <textarea class="input2" id="descricaoGato" rows="3"></textarea>
+                    <label class="label2" for="descricaoGato">Cor:</label>
+                    <input type="text" class="input2" id="descricaoGato" rows="3">
                 </div>
-                <button class="botao2" id="botaoAdicionarGato">Adicionar Gato</button>
+                <div class="input-group2">
+                    <label class="label2" for="descricaoGato">Raça:</label>
+                    <input type="text" class="input2" id="descricaoGato" rows="3">
+                </div>
+                <button onclick="cadastrarGato()" class="botao2" id="botaoAdicionarGato">Adicionar Gato</button>
             </div>
         
             <!-- Seção para listar gatos -->

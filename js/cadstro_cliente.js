@@ -46,9 +46,9 @@ function cadastrar_clinica(event) {
     });
 }
 
-// js/cadastro_cliente.js
+
 function entrarClinica(event) {
-    event.preventDefault(); // Previne o recarregamento da página
+    event.preventDefault();
 
     const formData = new FormData(document.getElementById('form-login-clinica'));
 
@@ -60,7 +60,8 @@ function entrarClinica(event) {
     .then(data => {
         if (data.success) {
             alert("Login realizado com sucesso!");
-            window.location.href = 'add-clinica.html'; // Redireciona para add-clinica.html após o login
+            sessionStorage.setItem("idclinica", data.idclinica); // Salva o idclinica
+            window.location.href = 'add-clinica.html';
         } else {
             alert("Erro no login: " + data.message);
         }
@@ -72,11 +73,12 @@ function entrarClinica(event) {
 
 
 
+
 function login_user() {
     const email = document.querySelector('input[name="email"]').value;
     const senha = document.querySelector('input[name="senha"]').value;
 
-    // Validação básica
+    
     if (!email || !senha) {
         alert("Por favor, preencha todos os campos.");
         return;
@@ -87,7 +89,7 @@ function login_user() {
         senha: senha
     };
 
-    // Chamada à API para autenticação
+  
     fetch('./php/loginuser.php', {
         method: 'POST',
         headers: {
@@ -100,7 +102,7 @@ function login_user() {
         if (data.error) {
             alert(data.error);
         } else {
-            // Redirecionar para a página GridClin.html
+            
             window.location.href = 'GridClin.html';
         }
     })

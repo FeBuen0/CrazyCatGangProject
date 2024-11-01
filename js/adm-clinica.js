@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const listaDoacoes = document.getElementById("listaDoacoes");
     const listaGatos = document.getElementById("listaGatos");
 
+    
     const doacoesRecebidas = [
         { produto: "Alimento", quantidade: 10 },
         { produto: "Brinquedo", quantidade: 5 },
@@ -20,26 +21,27 @@ document.addEventListener("DOMContentLoaded", function() {
 
     mostrarDoacoes();
 
-    document.getElementById("botaoAdicionarGato").addEventListener("click", function() {
-        const nome = document.getElementById("nomeGato").value;
-        const idade = document.getElementById("idadeGato").value;
-        const descricao = document.getElementById("descricaoGato").value;
 
-        if (!nome || !idade || !descricao) {
-            alert("Por favor, preencha todos os campos para adicionar um gato.");
-            return;
-        }
+    function carregarGatos() {
+        const idClinica = sessionStorage.getItem("idclinica");
 
-        const novoGato = document.createElement("div");
-        novoGato.className = "item2";
-        novoGato.textContent = `Nome: ${nome}, Idade: ${idade} anos, Descrição: ${descricao}`;
+        fetch('./php/consultar_gatos_clinica.php?idclinica=' + idClinica)
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    listaGatos.innerHTML = ""; 
+                    data.gatos.forEach(gato => {
+                        const gatoDiv = document.createElement("div");
+                        gatoDiv.className = "item2";
+                        gatoDiv.textContent = `Nome: ${gato.nome}, Idade: ${gato.idade} anos, Cor: ${gato.cor}, Raça: ${gato.raca}, Adotado: ${gato.adotado ? "Sim" : "Não"}`;
+                        listaGatos.appendChild(gatoDiv);
+                    });
+                } else {
+                    listaGatos.innerHTML = "Nenhum gato encontrado.";
+                }
+            })
+            .catch(error => console.error("Erro ao carregar gatos:", error));
+    }
 
-        listaGatos.appendChild(novoGato);
-
-        document.getElementById("nomeGato").value = "";
-        document.getElementById("idadeGato").value = "";
-        document.getElementById("descricaoGato").value = "";
-
-        alert("Gato adicionado com sucesso!");
-    });
+    carregarGatos();
 });

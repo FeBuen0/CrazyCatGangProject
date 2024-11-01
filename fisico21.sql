@@ -1,21 +1,14 @@
--- MySQL Workbench Forward Engineering
-
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema db_ong
+-- Schema db_ong2
 -- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `db_ong2` DEFAULT CHARACTER SET utf8;
 
 -- -----------------------------------------------------
--- Schema db_ong
--- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `db_ong2` DEFAULT CHARACTER SET utf8 ;
--- -----------------------------------------------------
-
--- -----------------------------------------------------
--- Table `db_ong`.`cliente`
+-- Table `db_ong2`.`cliente`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_ong2`.`cliente` (
   `idcliente` INT NOT NULL AUTO_INCREMENT,
@@ -29,9 +22,8 @@ CREATE TABLE IF NOT EXISTS `db_ong2`.`cliente` (
   UNIQUE INDEX `idcliente_UNIQUE` (`idcliente` ASC) VISIBLE)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `db_ong`.`clinica`
+-- Table `db_ong2`.`clinica`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_ong2`.`clinica` (
   `idclinica` INT NOT NULL AUTO_INCREMENT,
@@ -46,9 +38,8 @@ CREATE TABLE IF NOT EXISTS `db_ong2`.`clinica` (
   UNIQUE INDEX `idclinica_UNIQUE` (`idclinica` ASC) VISIBLE)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `db_ong`.`items`
+-- Table `db_ong2`.`items`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_ong2`.`items` (
   `iditems` INT NOT NULL AUTO_INCREMENT,
@@ -62,20 +53,18 @@ CREATE TABLE IF NOT EXISTS `db_ong2`.`items` (
   INDEX `fk_items_clinica1_idx` (`clinica_idclinica` ASC) VISIBLE,
   CONSTRAINT `fk_items_cliente`
     FOREIGN KEY (`cliente_idcliente`)
-    REFERENCES `db_ong`.`cliente` (`idcliente`)
+    REFERENCES `db_ong2`.`cliente` (`idcliente`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_items_clinica1`
     FOREIGN KEY (`clinica_idclinica`)
-    REFERENCES `db_ong`.`clinica` (`idclinica`)
+    REFERENCES `db_ong2`.`clinica` (`idclinica`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-USE `crazy_cat_gang` ;
-
 -- -----------------------------------------------------
--- Table `crazy_cat_gang`.`gatos`
+-- Table `db_ong2`.`gatos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_ong2`.`gatos` (
   `idgatos` INT NOT NULL AUTO_INCREMENT,
@@ -90,14 +79,13 @@ CREATE TABLE IF NOT EXISTS `db_ong2`.`gatos` (
   INDEX `fk_gatos_clinica_idx` (`clinica_idclinica` ASC) VISIBLE,
   CONSTRAINT `fk_gatos_clinica`
     FOREIGN KEY (`clinica_idclinica`)
-    REFERENCES `db_ong`.`clinica` (`idclinica`)
+    REFERENCES `db_ong2`.`clinica` (`idclinica`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `crazy_cat_gang`.`adocao`
+-- Table `db_ong2`.`adocao`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_ong2`.`adocao` (
   `idadocao` INT NOT NULL AUTO_INCREMENT,
@@ -109,16 +97,15 @@ CREATE TABLE IF NOT EXISTS `db_ong2`.`adocao` (
   INDEX `fk_adocao_gatos1_idx` (`gatos_idgatos` ASC) VISIBLE,
   CONSTRAINT `fk_adocao_cliente1`
     FOREIGN KEY (`cliente_idcliente`)
-    REFERENCES `db_ong`.`cliente` (`idcliente`)
+    REFERENCES `db_ong2`.`cliente` (`idcliente`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_adocao_gatos1`
     FOREIGN KEY (`gatos_idgatos`)
-    REFERENCES `crazy_cat_gang`.`gatos` (`idgatos`)
+    REFERENCES `db_ong2`.`gatos` (`idgatos`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
